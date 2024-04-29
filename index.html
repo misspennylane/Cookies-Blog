@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+    <title>Cookies Adventures</title>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+           /* font-size: 14px;*/
+            font-size: 1rem;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f3f3f3;
+        }
+
+        header { 
+            background-image: url(/BackgroundHeader.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: right;
+            max-height: auto;
+            padding: 20px;
+            text-align: center; 
+        }
+        .header-text {
+            color: #bfa9b8;
+            font-family:'Open Sans', sans-serif;
+            justify-content: center;
+        }
+        .navi {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            background: rgb(151, 151, 151);
+        }
+        .navi ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+        }
+
+        .navi li {
+            margin-right: 20px;
+        }
+
+        .navi a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+            font-weight: normal;
+        }
+
+        .navi a:hover {
+            color: #b0a9bf;
+            font-weight: bold;
+        }
+
+        .navi a.active {
+            color: #bfa9b8;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        .blog-text {
+            flex: 3;
+            padding: 10px;
+            margin: 30px;
+            box-sizing: border-box;
+            background-color: rgb(184, 191, 169);   
+            color:#555c60;
+        }
+
+        #welcome-message {
+            color:#555c60;
+        }
+        h2 {
+            color: #474056;
+        }
+
+        h3{
+            color: #474056;
+            font-size: 10px;
+        }
+       
+        #WZW {
+            flex: 1;
+            padding: 10px;
+            margin: 30px;
+            margin-left:0px;
+            box-sizing: border-box;
+            background-color: rgb(184, 191, 169);
+            color:#555c60;
+           /* max-height: 300px;*/
+            
+        }
+
+        footer {
+            background-color: rgb(184, 191, 169);
+            color:#555c60;
+            font-size: 11px;
+            text-align: right;
+            padding: 1px 50px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+
+       /* footer {
+            background-color: rgb(184, 191, 169);
+            color:#555c60;
+            text-align: right;
+            padding: 10px 60px;
+        }*/
+
+        .footer-credit {
+            text-align: center;
+            text-size-adjust: 3;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            gap: 5px 5px;
+            max-width: 250px;
+            
+            
+        }
+
+            .name,
+        .email,
+        button {
+            padding: 8px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 100px;
+            color: #474056;
+               
+        }
+
+        .name,
+        .email {
+            padding: 8px; 
+            border: 1px solid #333;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 100%;
+            color: #474056;
+            box-sizing: border-box;
+
+            /*margin-bottom: 8px;
+            color: #474056;*/
+            
+           
+        }
+        
+        button {
+            background-color: #333;
+            color: #9f94b7;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #555; 
+        }
+
+        .art-img {   
+            flex: 1;     
+            margin: 10px;
+            
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            text-align: left;
+            margin: 60px;
+            padding: 10px;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .gallery video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .navi a:hover {
+            cursor: pointer; 
+        }
+  
+
+
+        @media only screen and (max-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    nav.navi {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navi ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navi li {
+        margin: 10px 0;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .blog-text,
+    #WZW {
+        flex: 1;
+    }
+
+    .gallery {
+        margin: 10px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-text">
+            <h2>Cookies Adventures</h2>
+            <h3>Welkom op mijn pagina!</h3>
+        </div>
+    </header>
+    <nav class="navi">
+    <ul>
+        <li><a data-blog="WE">Clinic Working Equitation</a></li>
+        <li><a data-blog="Epe">Eperse Vierdaagse</a></li>
+        <li><a data-blog="drie">Boshuis Drie</a></li>
+    </ul>
+    </nav>
+
+    <div class="container">
+        <main class="blog-text">
+            <div id="welcome-message">
+                <h2>Welkom op mijn Blog</h2>
+                <p>Hier beschrijf ik verschillende avonturen die ik met Cookie meemaak. Groetjes Anne</p>
+                <img src="/IMAGES/rijden cookie aan de teugel.jpg" alt="Groepsfoto" width="640px" height="auto">
+            </div>
+
+            <article id="WE">
+                <h2>Clinic Working Equitation</h2>
+                <p>21 oktober hebben cookie en ik meegdaan aan een clinic Working Equitation van Henri Jacobsen.</p>
+                
+                <div class="art-img">
+                    <div class="gallery">
+                        
+                        <img src="/IMAGES/Clinic_WE_Opdebrug.jpg" alt="Op de brug" width="640px" height="auto">
+                        
+                    <div class="desc"> <b>Samen met Cookie op de brug. Ze deed dat echt super stoer!</b>
+                    </div>
+                </div> 
+                </div> 
+                
+                <div class="art-img">
+                    <div class="gallery">
+                       
+                            <video width="640" height="480" controls>
+                                <source src="/IMAGES/Clinic_WE-Stokinton.mp4" type="video/mp4">
+                                De Garrocha terug brengen naar de ton, in galop.
+                            </video>
+                        
+                        <div class="desc"><b>De Garrocha met maar één poging in de ton terug zetten. Ging beter dan ik verwachtte</b>
+                    </div>
+                    </div>
+                </div>
+            </article>
+
+            <article id="Epe">
+                <h2>Eperse Vierdaagse 2023</h2>
+                <p> In de tweede week van juni hebben Marlous en ik meegedaan aan de Eperse Vierdaagse.
+                    Je rijd dan vier dagen lang te paard, mooie routes in de omgeving van Epe rijden.</p>
+                
+                    <div class="art-img">
+                        <div class="gallery">
+                            
+                            <img src="/IMAGES/E4D_voorvertreklaatstedag.jpg" alt="Groepsfoto" width="640px" height="auto">
+                        
+                        <div class="desc"> <b>Groepsfoto met alle campinggasten. Dit was de laatste dag en het leek ons leuk het eerste deel met zijn allen te rijden.</b>
+                        </div>
+                    </div> 
+                    </div> 
+
+                    <div class="art-img">
+                        <div class="gallery">
+                           
+                            <img src="/IMAGES/E4D_MenIK.jpg" alt="Marlous en ik" width="640px" height="auto">
+                           
+                        <div class="desc"><b>Zin in de rit!</b>
+                        </div>
+                        </div>  
+                    </div>
+            </article>
+
+            <article id="drie">
+                <h2>Boshuis Drie</h2>
+                <p> Boshuis drie is een prachtige locatie in het Sprielder en Speuldersbos. Het is een schattig restaurant where je heerlijk kan eten.
+                Onder de man rijden we erheen en terwijl wij lekker op het terras zitten, kunnen de paarden bijkomen in de paddock.</p>
+                    
+                <div class="art-img">
+                    <div class="gallery">
+                        
+                        <img src="/IMAGES/BOAHUISDRIE_selfie.jpg" alt="selfie" width="640px" height="auto">
+                    </a>
+                    <div class="desc"><b>Marlous, Majorie en ik onderweg naar Boshuis Drie</b>
+                    </div>
+                    </div>   
+                </div>  
+
+                <div class="art-img">
+                    <div class="gallery">
+                        <a target="_blank" href="/IMAGES/BOSHUISDRIE_rijdenboszon.jpg">
+                        <img src="/IMAGES/BOSHUISDRIE_rijdenboszon.jpg" alt="Zon tussen Bomen" width="640px" height="auto">
+                    </a>
+                    <div class="desc"><b> Dit is één van mijn favoriete dingen in het bos. De zon die tussen de bomen doorschijnt en mooie lichtstralen maakt.</b>
+                    </div>
+                    </div>   
+                </div>  
+
+                <div class="art-img">
+                    <div class="gallery">
+                        <a target="_blank" href="/IMAGES/BOSHUISDRIE_Kijkennaardepaardenindepaddock.jpg">
+                        <img src="/IMAGES/BOSHUISDRIE_Kijkennaardepaardenindepaddock.jpg" alt="Paddock" width="640px" height="auto">
+                    </a>
+                    <div class="desc"><b> Even kijken of de paarden wel rustig blijven staan in de paddocks.</b>
+                    </div>
+                 </div> 
+                 </div>
+            </article>
+        </main>
+    
+        <aside id="WZW">
+            <h2>Wie zijn wij?</h2>
+            <p>Drie jaar geleden kreeg ik de kans om Cookie bij te rijden. Nu drie jaar later kunnen we wel zeggen dat we een team zijn geworden.</p>
+            <img src="/IMAGES/EVD_CookenIk.JPG" alt="Groepsfoto" width="320px" height="auto">
+        </aside>
+    </div>
+</body>
+
+<footer>
+    <div class="contact-info">
+        <h3>Neem contact met mij op</h3>
+        <form>
+            <div class="name">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="email">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <button class="button" type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="footer-credit">
+        <p>Websitemaker: Anne Kreischer</p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const blogLinks = document.querySelectorAll('.navi a');
+        const articles = document.querySelectorAll('main.blog-text article');
+        const welcomeMessage = document.getElementById('welcome-message');
+
+        // verberg alle artikelen
+        articles.forEach(article => {
+            article.style.display = 'none';
+        });
+
+        blogLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+
+        // Verwijder de 'active'-klasse van alle links
+        blogLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Voeg de 'active'-klasse toe aan de aangeklikte link
+            this.classList.add('active');
+
+                // verberg welkoms bericht
+                welcomeMessage.style.display = 'none';
+
+                // Hide all articles
+                articles.forEach(article => {
+                    article.style.display = 'none';
+                });
+
+                // laat het geselecteerde artikel zien
+                const targetArticleId = this.getAttribute('data-blog');
+                const targetArticle = document.getElementById(targetArticleId);
+                if (targetArticle) {
+                    targetArticle.style.display = 'block';
+                }
+            });
+        });
+    });
+</script>
+
+</html>
